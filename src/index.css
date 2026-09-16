@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Límpida — Design tokens
+   Paleta: azul profundo + ciano piscina + branco + verde-água
+   Tipografia: Sora (display) + Inter (corpo)
+   ========================================================================== */
+
+:root {
+  --ink: #0a2a3d;
+  --ink-deep: #061a26;
+  --ink-soft: #123b52;
+  --cyan: #12aebd;
+  --cyan-light: #5fd7e0;
+  --aqua: #37d6a8;
+  --white: #ffffff;
+  --mist: #eef7f8;
+  --sand: #f6fafb;
+  --ink-60: rgba(10, 42, 61, 0.64);
+  --ink-40: rgba(10, 42, 61, 0.42);
+
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --container: 1180px;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  --shadow-soft: 0 20px 50px -25px rgba(6, 26, 38, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  position: relative;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan), var(--aqua));
+  color: var(--ink-deep);
+  box-shadow: 0 16px 30px -12px rgba(18, 174, 189, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px -12px rgba(18, 174, 189, 0.65);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  transform: translateY(-2px);
+  background: var(--ink-deep);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--cyan);
+}
+
+.section-heading {
+  max-width: 620px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+}
+
+.section-heading p {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: var(--ink-60);
+}
+
+.section-pad {
+  padding: 100px 0;
+}
+
+@media (max-width: 720px) {
+  .section-pad {
+    padding: 68px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

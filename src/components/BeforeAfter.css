@@ -1,0 +1,58 @@
+.before-after {
+  background: var(--white);
+}
+
+.section-heading.center {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.before-after-frame {
+  position: relative;
+  margin: 52px auto 0;
+  max-width: 980px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.before-after-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ba-tag {
+  position: absolute;
+  bottom: 22px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  backdrop-filter: blur(6px);
+}
+
+.ba-tag-before {
+  left: 22px;
+  background: rgba(10, 42, 61, 0.72);
+  color: var(--white);
+}
+
+.ba-tag-after {
+  right: 22px;
+  background: rgba(55, 214, 168, 0.9);
+  color: var(--ink-deep);
+}
+
+@media (max-width: 560px) {
+  .before-after-frame {
+    border-radius: var(--radius-md);
+  }
+  .ba-tag {
+    font-size: 0.76rem;
+    padding: 6px 14px;
+    bottom: 14px;
+  }
+}
